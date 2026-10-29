@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriela & Jose Luis - 02 Enero 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Cormorant Garamond',serif;background:#fdfbf7;color:#5a4a3a;text-align:center}
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1519741497674-611481863552?w=800');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;padding:20px}
+.hero h1{font-family:'Great Vibes',cursive;font-size:4.2rem;color:#f9e6b3;margin:0;line-height:1;text-shadow:0 2px 20px rgba(0,0,0,0.6)}
+.btn{padding:16px 32px;border-radius:50px;background:#c9a86a;color:white;text-decoration:none;display:inline-block;margin:12px;border:none;cursor:pointer;font-size:1rem;box-shadow:0 5px 15px rgba(0,0,0,0.2)}
+.card{background:white;margin:22px auto;max-width:520px;padding:28px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,0.07)}
+.countdown{display:flex;justify-content:center;gap:10px;margin-top:15px}
+.box{border:1px solid #e8dcc6;padding:12px;border-radius:12px;min-width:62px;background:#fffdf8}
+.box span{font-size:1.6rem;font-weight:bold;color:#c9a86a}
+img.real{width:92%;border-radius:18px;margin:15px 0;border:4px solid #f9e6b3}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>Gabriela<br>& Jose Luis</h1>
+<p style="letter-spacing:5px;margin:15px 0">¡NOS CASAMOS!</p>
+<p>02 ENERO 2027 • 7:30 PM<br>Salon El Cocal</p>
+<button class="btn" onclick="document.getElementById('audio').play();document.getElementById('contenido').scrollIntoView({behavior:'smooth'})">♫ TOCA PARA ABRIR - Volvi a nacer</button>
+</div>
+
+<div id="contenido">
+<div class="card">
+<h2 style="font-family:'Great Vibes',cursive;color:#c9a86a;font-size:2.6rem;margin:0">Volvi a nacer</h2>
+<p><em>"Volvi a nacer cuando te conoci"</em> - Carlos Vives<br><br>Con la bendicion de Dios queremos invitarte a nuestra boda.</p>
+<img class="real" src="PEGA_AQUI_TU_LINK_DE_IMGBB.jpg" alt="Gabriela y Jose Luis">
+</div>
+
+<div class="card">
+<h3>CUENTA REGRESIVA</h3>
+<div class="countdown">
+<div class="box"><span id="d">00</span><br>DIAS</div>
+<div class="box"><span id="h">00</span><br>HRS</div>
+<div class="box"><span id="m">00</span><br>MIN</div>
+<div class="box"><span id="s">00</span><br>SEG</div>
+</div>
+</div>
+
+<div class="card">
+<h3 style="color:#c9a86a">SALON DE FIESTAS EL COCAL</h3>
+<p>Santiago Tuxtla, Veracruz<br>Codigo: Coctel</p>
+<a class="btn" href="https://maps.app.goo.gl/7H76cWnCYAtoLeaN9?g_st=aw" target="_blank">📍 VER MAPA</a>
+</div>
+
+<div class="card">
+<h3 style="color:#c9a86a">CONFIRMA TU ASISTENCIA</h3>
+<a class="btn" href="https://wa.me/522713529636?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Gabriela%20y%20Jose%20Luis" target="_blank">✅ CONFIRMAR WHATSAPP<br>2713529636</a>
+</div>
+
+<div class="card">
+<p style="font-family:'Great Vibes',cursive;font-size:2.2rem;color:#c9a86a">¡Gracias por acompañarnos!</p>
+<p>Gabriela & Jose Luis<br>02.01.2027</p>
+</div>
+</div>
+
+<audio id="audio" loop controls style="position:fixed;bottom:15px;right:15px;width:200px;opacity:0.8">
+<source src="https://commondatastorage.googleapis.com/codeskulptor-assets/week7-bounce.m4a" type="audio/mpeg">
+</audio>
+
+<script>
+var fecha = new Date("2027-01-02T19:30:00").getTime();
+setInterval(function(){
+ var ahora = new Date().getTime();
+ var dif = fecha - ahora;
+ if(dif>0){
+ document.getElementById('d').innerHTML=Math.floor(dif/(1000*60*60*24));
+ document.getElementById('h').innerHTML=Math.floor((dif%(1000*60*60*24))/(1000*60*60));
+ document.getElementById('m').innerHTML=Math.floor((dif%(1000*60*60))/(1000*60));
+ document.getElementById('s').innerHTML=Math.floor((dif%(1000*60))/1000);
+ }
+},1000);
+</script>
+</body>
+</html>
